@@ -1,0 +1,25 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: var(--space-6);
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.completed {
+  color: var(--color-success-600);
+  background: var(--color-success-50);
+}
+
+.in_progress {
+  color: var(--color-primary-700);
+  background: var(--color-primary-100);
+}
+
+.pending {
+  color: var(--color-neutral-600);
+  background: var(--color-neutral-100);
+}

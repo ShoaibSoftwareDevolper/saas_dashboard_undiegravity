@@ -1,0 +1,115 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  animation: rise var(--duration-slow) var(--ease-standard) both;
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.default {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.highlight {
+  color: var(--color-text-inverse);
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-brand);
+}
+
+.dark {
+  color: var(--color-text-inverse);
+  background: var(--gradient-tracker);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skeletonLine {
+  height: var(--space-4);
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-neutral-100) 0%, var(--color-neutral-200) 50%, var(--color-neutral-100) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeletonLine:nth-child(2) {
+  width: 80%;
+}
+
+.skeletonLine:nth-child(3) {
+  width: 60%;
+}
+
+.highlight .skeletonLine,
+.dark .skeletonLine {
+  background: linear-gradient(90deg, var(--alpha-white-10) 0%, var(--alpha-white-40) 50%, var(--alpha-white-10) 100%);
+  background-size: 200% 100%;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  color: var(--color-text-secondary);
+}
+
+.highlight .error,
+.dark .error {
+  color: var(--alpha-white-85);
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-3));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

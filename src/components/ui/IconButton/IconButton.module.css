@@ -1,0 +1,120 @@
+.iconButton {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    background var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard);
+}
+
+.iconButton:active {
+  transform: scale(0.94);
+}
+
+.sm {
+  width: var(--size-control-sm);
+  height: var(--size-control-sm);
+}
+
+.md {
+  width: var(--size-control-md);
+  height: var(--size-control-md);
+}
+
+.lg {
+  width: var(--size-control-lg);
+  height: var(--size-control-lg);
+}
+
+.surface {
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.surface:hover {
+  color: var(--color-text-brand);
+}
+
+.outline {
+  color: var(--color-text-primary);
+  border: 1.5px solid var(--color-neutral-800);
+}
+
+.outline:hover {
+  color: var(--color-text-inverse);
+  background: var(--color-neutral-900);
+}
+
+.inverse {
+  color: var(--color-text-inverse);
+  border: 1.5px solid var(--alpha-white-70);
+}
+
+.inverse:hover {
+  color: var(--color-text-brand);
+  background: var(--color-surface);
+}
+
+.light {
+  color: var(--color-primary-600);
+  background: var(--color-surface);
+}
+
+.light:hover {
+  transform: scale(1.06);
+}
+
+.brand {
+  color: var(--color-text-inverse);
+  background: var(--gradient-primary);
+}
+
+.brand:hover {
+  transform: scale(1.06);
+}
+
+.ghost {
+  color: var(--color-text-secondary);
+}
+
+.ghost:hover {
+  color: var(--color-text-primary);
+  background: var(--color-surface-sunken);
+}
+
+.iconSm {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+.iconMd {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+
+.iconLg {
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+}
+
+.badge {
+  position: absolute;
+  top: calc(var(--space-1) * -1);
+  right: calc(var(--space-1) * -1);
+  min-width: var(--space-5);
+  height: var(--space-5);
+  padding: 0 var(--space-1);
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-surface);
+  background: var(--color-primary-500);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+}

@@ -1,0 +1,213 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-2xl);
+  background: var(--color-bg-canvas);
+}
+
+.menu {
+  display: none;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-left: var(--space-2);
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+  line-height: var(--line-height-snug);
+}
+
+.profileName {
+  font-weight: var(--font-weight-semibold);
+}
+
+.profileEmail {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.search {
+  position: relative;
+  flex: 1;
+  max-width: 26rem;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: var(--size-control-lg);
+  padding: 0 var(--space-2) 0 var(--space-5);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.searchField:focus-within {
+  box-shadow: var(--shadow-focus);
+}
+
+.searchIcon {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  flex-shrink: 0;
+  color: var(--color-text-primary);
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.searchInput:focus-visible {
+  box-shadow: none;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-0-5);
+  height: var(--size-control-sm);
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  font-family: inherit;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-sunken);
+}
+
+.kbdIcon {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+.results {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  right: 0;
+  z-index: var(--z-dropdown);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  animation: drop var(--duration-base) var(--ease-standard);
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+
+.result:hover,
+.result:focus-visible {
+  background: var(--color-primary-50);
+  box-shadow: none;
+}
+
+.resultIcon {
+  display: grid;
+  place-items: center;
+  width: var(--size-control-sm);
+  height: var(--size-control-sm);
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-primary-600);
+  background: var(--color-primary-100);
+}
+
+.resultIcon svg {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+.resultText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.resultTitle {
+  font-weight: var(--font-weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resultSubtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-transform: capitalize;
+}
+
+.empty {
+  padding: var(--space-3);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--space-2) * -1));
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu {
+    display: inline-grid;
+  }
+}
+
+@media (max-width: 768px) {
+  .profileText,
+  .kbd {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    flex-wrap: wrap;
+    padding: var(--space-3);
+  }
+
+  .search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+}

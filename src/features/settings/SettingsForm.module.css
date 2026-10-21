@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: var(--space-2);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-6);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.toggles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.toggle {
+  display: grid;
+  place-items: center;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-full);
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.toggle:hover {
+  color: var(--color-text-brand);
+}
+
+.toggleIcon {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}

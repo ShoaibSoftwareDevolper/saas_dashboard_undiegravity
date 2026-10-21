@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
+  border: 1.5px solid var(--color-primary-300);
+  border-radius: var(--radius-full);
+  background: var(--color-primary-50);
+  animation: reveal var(--duration-base) var(--ease-standard) both;
+}
+
+.form:focus-within {
+  border-color: var(--color-primary-500);
+  box-shadow: var(--shadow-focus);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--font-size-sm);
+}
+
+.input:focus-visible {
+  box-shadow: none;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.error {
+  margin: calc(var(--space-2) * -1) 0 var(--space-3) var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--color-danger-500);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--space-2) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

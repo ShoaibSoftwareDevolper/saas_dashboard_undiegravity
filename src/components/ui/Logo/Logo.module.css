@@ -1,0 +1,35 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+}
+
+.mark {
+  object-fit: contain;
+  transition: transform var(--duration-slow) var(--ease-emphasized);
+}
+
+.logo:hover .mark {
+  transform: rotate(-12deg) scale(1.05);
+}
+
+.md {
+  font-size: var(--font-size-xl);
+}
+
+.md .mark {
+  width: var(--size-control-md);
+  height: var(--size-control-md);
+}
+
+.lg {
+  font-size: var(--font-size-2xl);
+}
+
+.lg .mark {
+  width: var(--size-control-lg);
+  height: var(--size-control-lg);
+}

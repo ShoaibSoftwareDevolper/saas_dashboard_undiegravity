@@ -1,0 +1,70 @@
+.gauge {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  width: 100%;
+  max-width: var(--layout-chart-height);
+  overflow: visible;
+}
+
+.track {
+  fill: none;
+  stroke-width: var(--gauge-stroke);
+}
+
+.patternLine {
+  stroke: var(--color-pattern-line);
+  stroke-width: 1.5;
+}
+
+.patternBg {
+  fill: var(--color-surface);
+}
+
+.progress {
+  fill: none;
+  stroke-width: var(--gauge-stroke);
+  stroke-dasharray: var(--gauge-value) 100;
+  animation: fill var(--duration-chart) var(--ease-standard) both;
+  filter: drop-shadow(0 var(--space-1) var(--space-2) var(--alpha-primary-30));
+}
+
+.stopStart {
+  stop-color: var(--color-primary-600);
+}
+
+.stopEnd {
+  stop-color: var(--color-primary-400);
+}
+
+.summary {
+  margin-top: calc(var(--space-10) * -1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+@keyframes fill {
+  from {
+    stroke-dasharray: 0 100;
+  }
+}
